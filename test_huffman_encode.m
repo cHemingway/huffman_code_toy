@@ -1,3 +1,8 @@
+% Demo showing encoding of a long string and performance results
+
+% TODO use better import method
+addpath('./tinevez-matlab-tree-3d13d15');
+
 % Arbitrary message encode, shows performance results
 message = fileread('sample_text.txt');
 pmap = probability_map(message);
