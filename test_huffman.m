@@ -11,6 +11,9 @@ pmap = containers.Map(S, probs);
 % Generate the map
 [map, t] = huffman_map(pmap);
 
+% Show the tree
+disp(t.tostring(false,@node_to_string));
+
 % Show the map
 print_huffman_map(map);
 
@@ -22,6 +25,9 @@ pmap = containers.Map(S, probs);
 
 % Generate the map
 [map, t] = huffman_map(pmap);
+
+% Show the tree
+disp(t.tostring(false,@node_to_string));
 
 % Show the map
 print_huffman_map(map);

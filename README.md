@@ -8,4 +8,4 @@ Do not use this for anything, no gaurantee it works.
 `test_huffman_encode.m` Compresses a long string of text, and gives compression ratio vs theoretical.
 
 ### Credits
-Uses [matlab-tree](https://github.com/tinevez/matlab-tree)
+Uses [matlab-tree](https://github.com/tinevez/matlab-tree). MODIFIED tostring.m to add custom node contents printing function support.

@@ -1,18 +1,24 @@
-function str = tostring(obj, sorted)
+function str = tostring(obj, sorted, content_to_string)
 %% TOSTRING  Return a char matrix reprensenting the tree.
 % The symbol 'ø' is used for nodes that have no or empty content.
 %
 % obj.tostring(sorted) sort the nodes in the generated string if 'sorted'
 % is true. It is false by defualt.
+%
+% obj.tostring(_,content_to_string) use custom function to convert the
+% contents of each node to a char array
 
     if nargin < 2
         sorted = false;
+    end
+    if nargin < 3
+        content_to_string = @contentToString;
     end
 
     %% Use a tree to compute spaces;
 
     % 1. Generate string representation of content as a tree
-    strContentTree = obj.treefun(@contentToString);
+    strContentTree = obj.treefun(content_to_string);
     
     % 1.25 Compute space requirements
     spaceTree = strContentTree.treefun(@numel);
