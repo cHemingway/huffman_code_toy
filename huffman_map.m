@@ -51,8 +51,9 @@ for idx=t.breadthfirstiterator
     other = current_level(current_level ~= idx);
     if t.get(idx).p > t.get(other).p
         bit = 0;
-    elseif t.get(idx).p == t.get(other).p % Handle equals, special case
-        bit = ~bit; % Ensure it is not the same as the sibling
+    elseif t.get(idx).p == t.get(other).p % Handle equal prob, special case
+        % Set bit based on symbol value. Works for letters too e.g. 'a'<'b'
+        bit = t.get(idx).s > t.get(other).s; 
     else 
         bit = 1;
     end
