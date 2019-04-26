@@ -52,8 +52,16 @@ for idx=t.breadthfirstiterator
     if t.get(idx).p > t.get(other).p
         bit = 0;
     elseif t.get(idx).p == t.get(other).p % Handle equal prob, special case
-        % Set bit based on symbol value. Works for letters too e.g. 'a'<'b'
-        bit = t.get(idx).s > t.get(other).s; 
+        % First, decided based on length
+        length_diff = length(t.get(idx).s) - length(t.get(other).s);
+        if length_diff == 0
+            % Set bit based on symbol value. Works for letters too e.g. 'a'<'b'
+            bit = t.get(idx).s > t.get(other).s; 
+        elseif length_diff > 0
+            bit = 0;
+        else
+            bit = 1;
+        end
     else 
         bit = 1;
     end
