@@ -1,5 +1,5 @@
 ## huffman_toy
-A toy huffman table generator in MATLAB
+A toy huffman code implementation in MATLAB
 
 Not fast or tested properly, but somewhat simple to understand code.
 Do not use this for anything, no gaurantee it works.
